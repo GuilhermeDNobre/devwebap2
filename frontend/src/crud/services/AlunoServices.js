@@ -1,9 +1,48 @@
-// chamada das rotas que estariam dentro dos useState, assim melhorando o código, aqui serão chamados os metodos http get para pegar os alunos, post para enviar os alunos atraves do formulario, put para atualizar uma lista de alunos e delete para deletar os alunos, utilize o axios para realizar a chamada da api no express
+import axios from "axios";
 
-import axios from 'axios'
+const url = "http://localhost:3002/alunos/"
 
-class ProfessorService{
 
+class AlunoServices {
+  static getAlunosAxiosThenCatch = (callback) => {
+    axios
+      .get(url+"listar")
+      .then((response) => {
+        console.log(response.data)
+        callback(response.data);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  static postAlunoAxiosThenCatch = (aluno, callback) => {
+    axios
+      .post(url+"criar", aluno)
+      .then((response) => {
+        callback(response);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  static updateAluno = (id, professorEditado, callback) => {
+    
+    axios
+      .put(`http://localhost:3002/alunos/atualizar/${id}`, professorEditado)
+      .then((response) => {
+        callback(response)
+      })
+      .catch((error) => console.log(error));
+  };
+
+  static deleteAluno = (id, callback) => {
+    axios
+      .delete(`http://localhost:3002/alunos/apagar/${id}`)
+      .then(response => {
+        alert("Aluno apagado!")
+        console.log(response)
+        callback("ok!")
+      })
+      .catch( error => console.log(error))
+  }
 }
 
-export default ProfessorService
+export default AlunoServices;

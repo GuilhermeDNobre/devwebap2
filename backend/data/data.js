@@ -1,10 +1,10 @@
 const alunos = [
 
-    { id: 0, nome: "Wladimir Tavares", curso: "CC", ira: 0 },
-    { id: 1, nome: "Fábio Campos", curso: "SI", ira: 0 },
-    { id: 2, nome: "João Marcel", curso: "CC", ira: 0 },
-    { id: 3, nome: "Arthur Araruna", curso: "DD", ira: 0 },
-    { id: 4, nome: "Davi Romero", curso: "EC", ira: 0 }
+    { id: 0, nome: "Guilherme Damasceno", curso: "ES", ira: 6.8 },
+    { id: 1, nome: "Jefferson Carvalho", curso: "CC", ira: 8.4 },
+    { id: 2, nome: "Fulano da Silva", curso: "DD", ira: 7.5 },
+    { id: 3, nome: "Cicrano de Lima", curso: "ES", ira: 5.3 },
+    
 
 ]
 
